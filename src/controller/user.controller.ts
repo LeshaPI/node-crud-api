@@ -53,7 +53,7 @@ class UserController {
 
         user = JSON.parse(user);
 
-        if( id.match( ID_REGEXP ) ){
+        if( id && id.match( ID_REGEXP ) ){
 
             const newUser = db.updateUser( user, id );
             if( newUser ) {

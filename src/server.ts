@@ -28,4 +28,4 @@ class Server {
 }
 
 
-export default Server;
+export const server = new Server();

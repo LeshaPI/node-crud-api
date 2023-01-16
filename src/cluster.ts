@@ -1,6 +1,6 @@
 import cluster from 'node:cluster';
 import { cpus } from 'os';
-import Server from './server';
+import { server } from './server';
 
 class Cluster  {
 
@@ -18,8 +18,6 @@ class Cluster  {
             });
 
         } else {
-
-            const server = new Server()
             server.start( PORT );
         }
     }
