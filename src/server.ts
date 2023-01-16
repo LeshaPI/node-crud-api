@@ -23,7 +23,7 @@ class Server {
 
     start( PORT ) {
         this.listen( PORT );
-        console.log( 'sever started' );
+        console.log( 'Server started with port:'+ PORT );
     }
 }
 

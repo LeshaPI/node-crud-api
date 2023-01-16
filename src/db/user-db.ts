@@ -50,4 +50,4 @@ class UserDB {
 }
 
 
-export default UserDB;
+export const userDB = new UserDB();

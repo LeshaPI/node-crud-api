@@ -13,7 +13,7 @@ export interface IResponce extends ServerResponse {
 }
 
 export interface IUserDb{
-    id: string;
+    id?: string;
 	username: string;
 	age: number;
 	hobbies: string[];

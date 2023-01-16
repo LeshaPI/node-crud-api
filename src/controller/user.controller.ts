@@ -1,11 +1,9 @@
-import { IResponce } from "../interfaces/IServer";
-import UserDB from "../db/user-db";
+import { IResponce, IUserDb } from "../interfaces/IServer";
+import { userDB as db } from "../db/user-db";
 import { v4 as uuidv4 } from 'uuid';
 import { ID_REGEXP, OBJ_KEYS } from "../utils/consts";
 import propCheck from "../utils/propCheck";
 
-
-const db = new UserDB();
 
 class UserController {
     async getUsers( res:IResponce ) {
@@ -13,10 +11,9 @@ class UserController {
 
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(users));
-
     };
 
-    async getUser( id, res:IResponce ) {
+    async getUser( id: string, res:IResponce ) {
 
         if( id.match( ID_REGEXP ) ) {
             const user = db.getUser( id );
@@ -33,9 +30,8 @@ class UserController {
             res.writeHead(400, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ message: "ID is invalid" }));
         }
-
-        
     };
+
 
     async createUser ( user, res:IResponce ) {
 
@@ -50,11 +46,10 @@ class UserController {
             res.writeHead(400, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ message: "Invalid prop" }));
         }
-        
     };
 
 
-    async updateUser( user, id, res ) {
+    async updateUser( user, id: string, res: IResponce ) {
 
         user = JSON.parse(user);
 
@@ -77,7 +72,7 @@ class UserController {
         
     }
 
-    async deleteUser( id, res ) {
+    async deleteUser( id: string, res: IResponce ) {
 
         if ( id.match( ID_REGEXP ) ) {
 
