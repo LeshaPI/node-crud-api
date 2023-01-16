@@ -1,9 +1,16 @@
 # node-crud-api
-Create .env file with PORT
+# node-crud-api
+# Download
 
-Development:
- npm run start:dev .
-Production:
- npm run start:prod .
-Tests:
- npm run test .
+git clone {repository URL}
+
+# Scripts
+**Development**: npm run start:dev.
+____
+
+**Production**: npm run start:prod.
+
+____
+
+**Tests**: npm run test .
+____
