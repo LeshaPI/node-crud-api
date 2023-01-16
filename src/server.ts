@@ -16,7 +16,7 @@ class Server {
         });
     }
     
-    listen( PORT ) {
+    private listen( PORT ) {
         this.server.listen( PORT );
     }   
 
@@ -26,5 +26,6 @@ class Server {
         console.log( 'Server started with port:'+ PORT );
     }
 }
+
 
 export default Server;
